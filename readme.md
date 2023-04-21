@@ -13,7 +13,7 @@ Embedded IoT API (EmbAPI) is an open-source implementation of an standard IoT AP
  - [X] Implement Embapi Configuration Class
  - [X] Implement Embapi Configuration Json handler
  - [X] Compile source code to ESP8266
- - [ ] Compile source code to ESP32
+ - [X] Compile source code to ESP32
  - [ ] Compile source code on desktop
  - [ ] Implement UNIT Tests
- - [ ] Initialize EmbApiServer project
+ - [ ] Start EmbApiServer project
