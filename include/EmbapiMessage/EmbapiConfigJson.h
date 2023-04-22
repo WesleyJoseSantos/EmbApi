@@ -18,11 +18,7 @@
 class EmbapiConfigJson : public EmbapiConfig
 {
 private:
-    void hardwareToJson();
-    void softwareToJson();
 
-    EmbapiError hardwareFromJson();
-    EmbapiError softwareFromJson();
 public:
     EmbapiConfigJson(){}
     char *toJson();
