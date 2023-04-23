@@ -36,7 +36,7 @@ private:
 
 protected:
     uint8_t type; /**< Message type */
-    uint8_t id; /**< Message ID */
+    uint8_t error; /**< Message error code*/
 public:
 
     /**
@@ -47,11 +47,11 @@ public:
     uint8_t getType() { return type; }
 
     /**
-     * @brief Get the message ID
+     * @brief Get the message error code
      * 
-     * @return uint8_t Message ID
+     * @return uint8_t Error code
      */
-    uint8_t getId() { return id; }
+    uint8_t getError() { return error; }
 };
 
 #endif  //!__EMBAPIMESSAGE__H__
