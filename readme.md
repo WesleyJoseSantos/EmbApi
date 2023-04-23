@@ -36,19 +36,11 @@ EmbapiCore v0.1.0: Library to handle EmbAPI IoT protocols on Arduino/Linux/Windo
  - [ ] Implement MqttClientWrapper
  - [ ] Implement NtpClientWrapper
  - [ ] Implement HttpServerWrapper
- - [ ] Implement EmbapiApi
+ - [ ] Implement Embapi
  - [ ] Compile source code in arduino (ESP8266/ESP32)
  - [ ] Compile source code on linux
  - [ ] Compile source code on windows
  - [ ] Implement UNIT Tests
- - [ ] Implement UNIT Tests
-
-EmbapiJS v0.1.0: Library to integrate EmbAPI devices to javascript applications
- - [ ] Implement EmbapiJS
- - [ ] Implement UNIT Tests
-
-EmbapiJSApp v0.1.0: Application example using EmbapiJS
- - [ ] Implement EmbAPI Web APP (html/css)
 
 EmbapiFlutterSDK v0.1.0: Library to integrate EmbAPI devices to flutter applications
  - [ ] Implement EmbapiFlutterSDK
@@ -58,12 +50,19 @@ EmbapiFlutterApp v0.1.0: Application example using EmbapiFlutterSDK
  - [ ] Implement EmbapiApp
  - [ ] Implement UNIT Tests
 
+EmbapiJS v0.1.0: Library to integrate EmbAPI devices to javascript applications
+ - [ ] Implement EmbapiJS
+ - [ ] Implement UNIT Tests
+
+EmbapiJSApp v0.1.0: Application example using EmbapiJS
+ - [ ] Implement EmbAPI Web APP (html/css)
+
 embapi_idf v0.1.0: Implement embapi on espressif-idf
  - [ ] Implement embapi_message
  - [ ] Implement embapi_core
  - [ ] Implement embapi
 
-EmbapiTA v0.1.0: TA initial stack for EmbAPI for Arduino/Linux/Windows
+EmbapiTA v0.1.0: EmbAPI TA initial stack for Arduino/Linux/Windows
 
 - [ ] Implement ModbusWrapper for arduino/linux
 - [ ] Implement UNIT Tests
