@@ -9,14 +9,15 @@
  * 
  */
 
-#include "EmbapiError.h"
+#include "EmbapiMessage.h"
+#include "EmbapiJson.h"
 
-class EmbapiMessageJson
+class EmbapiMessageJson : public EmbapiMessage, public EmbapiJson
 {
 private:
     
 public:
     EmbapiMessageJson() {}
-    char *toJson();
-    EmbapiError fromJson(char *json);
+    void toJson(JsonDocument *doc) override;
+    void fromJson(JsonDocument *doc) override;
 };
