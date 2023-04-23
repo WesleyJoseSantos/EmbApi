@@ -51,7 +51,7 @@ enum EmbapiConfigId
  */
 union EmbapiConfigData
 {
-    WifiConfig wifiConfig; /**< WiFi configuration */
+    WifiConfig wifi; /**< WiFi configuration */
     MqttConfig mqtt; /**< MQTT configuration */
     NtpConfig ntp; /**< NTP configuration */
 
@@ -77,6 +77,7 @@ union EmbapiConfigData
 class EmbapiConfig : public EmbapiMessage
 {
 protected:
+    EmbapiConfigId id; /**< Id that indentify configuration */
     EmbapiConfigData config; /**< Configuration data */
 public:
 
@@ -89,13 +90,12 @@ public:
     /**
      * @brief Constructor for EmbapiConfig class
      * 
-     * @param type Message type
      * @param id Message ID
      * @param config Configuration data
      */
-    EmbapiConfig(uint8_t type, uint8_t id, EmbapiConfigData config)
+    EmbapiConfig(EmbapiConfigId id, EmbapiConfigData config)
     {
-        this->type = type;
+        this->type = EMBAPI_MESSAGE_TYPE_CONFIG;
         this->id = id;
         this->config = config;
     }
