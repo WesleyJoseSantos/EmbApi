@@ -11,6 +11,7 @@
 
 #include "EmbapiCore/EmbapiError.h"
 #include "EmbapiMessage/EmbapiConfigJson.h"
+#include "EmbapiMessage/EmbapiMessageJson.h"
 #include "EmbapiMessage/WifiConfigJson.h"
 #include "EmbapiMessage/NtpConfigJson.h"
 #include "EmbapiMessage/MqttConfigJson.h"
@@ -22,19 +23,19 @@ void EmbapiConfigJson::toJson(JsonDocument *doc)
     switch (id)
     {
         case EMBAPI_CONFIG_ID_UNKNOWN:
-            this->error = EmbapiError::UNKNOWN_ID;
+            // this->error = EmbapiError::UNKNOWN_ID;
             break;
         case EMBAPI_CONFIG_ID_WIFI:
             WifiConfigJson(this->config.wifi).toJson(doc);
             break;
         case EMBAPI_CONFIG_ID_ETHERNET:
-            this->error = EmbapiError::NOT_IMPLEMENTED;
+            // this->error = EmbapiError::UNKNOWN_ID;
             break;
         case EMBAPI_CONFIG_ID_SERIAL:
-            this->error = EmbapiError::NOT_IMPLEMENTED;
+            // this->error = EmbapiError::UNKNOWN_ID;
             break;
         case EMBAPI_CONFIG_ID_BLUETOOTH:
-            this->error = EmbapiError::NOT_IMPLEMENTED;
+            // this->error = EmbapiError::UNKNOWN_ID;
             break;
         case EMBAPI_CONFIG_ID_NTP:
             NtpConfigJson(this->config.ntp).toJson(doc);
