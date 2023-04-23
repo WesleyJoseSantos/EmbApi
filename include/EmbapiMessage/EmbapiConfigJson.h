@@ -20,7 +20,8 @@ class EmbapiConfigJson : public EmbapiConfig, public EmbapiJson
 private:
 
 public:
-    EmbapiConfigJson() {}
+    EmbapiConfigJson(const EmbapiConfig &config):EmbapiConfig(config){}
+    EmbapiConfigJson(JsonDocument *doc) { this->fromJson(doc); }
     void toJson(JsonDocument *doc) override;
     void fromJson(JsonDocument *doc) override;
 };
