@@ -16,7 +16,6 @@
 #define __EMBAPICONFIG__H__
 
 #include <inttypes.h>
-#include "EmbapiMessage.h"
 #include "MqttConfig.h"
 #include "NtpConfig.h"
 #include "WifiConfig.h"
@@ -74,7 +73,7 @@ union EmbapiConfigData
  * This class provides a way to send and receive configuration data using the Embapi protocol.
  * 
  */
-class EmbapiConfig : public EmbapiMessage
+class EmbapiConfig
 {
 protected:
     EmbapiConfigId id; /**< Id that indentify configuration */
@@ -95,7 +94,6 @@ public:
      */
     EmbapiConfig(EmbapiConfigId id, EmbapiConfigData config)
     {
-        this->type = EMBAPI_MESSAGE_TYPE_CONFIG;
         this->id = id;
         this->config = config;
     }
