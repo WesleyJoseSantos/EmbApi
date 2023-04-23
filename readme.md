@@ -5,9 +5,9 @@ EmbAPI - A Standard API for IoT Firmware Development
 
 > **Advise:** This is an work in progress. Don't use it on production environments.
 
-EmbAPI is an open-source library for developing firmware  in the IoT space. It is compatible with arduino, and Linux and is designed to simplify and accelerate the development of IoT projects by providing a standard API accessible via HTTP client or MQTT client for configuring devices.
+EmbAPI is an open-source library for developing firmware  in the IoT space. It is compatible with arduino, and Linux/Windows and is designed to simplify and accelerate the development of IoT projects by providing a standard API accessible via HTTP client or MQTT client for configuring devices.
 
-One of the main advantages of EmbAPI is its compatibility with Linux, which allows to develop and test a large part of the firmware on a PC before deploying it on the bare metal. This feature greatly simplifies debugging, as debugging code directly on the hardware can be quite challenging.
+One of the main advantages of EmbAPI is its compatibility with Linux/Windows, which allows to develop and test a large part of the firmware on a PC before deploying it on the bare metal. This feature greatly simplifies debugging, as debugging code directly on the hardware can be quite challenging.
 
 The main differentiator of EmbAPI is its implementation of a standard API that can be accessed via different protocols, making it easier for developers to integrate their devices with another frameworks and languages such as Flutter, JavaScript/TypeScript, Rust, and more. The library is designed to be modular and extensible, allowing it to support additional protocols such as Modbus, OPC UA, CAN Bus, and others in the future.
 
@@ -15,11 +15,11 @@ The main software API is implemented as a separate layer that can be accessed by
 
 The library is initially developed on the Arduino platform, but it is designed to be portable to other platforms as well. It is fully open-source, allowing developers to use, modify, and contribute to the codebase as they see fit.
 
-In summary, EmbAPI is a powerful and flexible library for IoT firmware development that provides a standard API accessible via different protocols, making it easier for developers to integrate their devices into different systems. Its modularity, extensibility, and compatibility with Linux make it a valuable tool for developing and debugging IoT projects. The library's ability to integrate with industrial automation technologies further expands its use cases.
+In summary, EmbAPI is a powerful and flexible library for IoT firmware development that provides a standard API accessible via different protocols, making it easier for developers to integrate their devices into different systems. Its modularity, extensibility, and compatibility with Linux/Windows make it a valuable tool for developing and debugging IoT projects. The library's ability to integrate with industrial automation technologies further expands its use cases.
 
 ## Roadmap:
 
-EmbapiMessage v0.1.0: Library to handle EmbAPI messages on Arduino/Linux
+EmbapiMessage v0.1.0: Library to handle EmbAPI messages on Arduino/Linux/Windows
 
  - [X] Implement WifiConfigJson
  - [X] Implement NtpConfigJson
@@ -28,14 +28,19 @@ EmbapiMessage v0.1.0: Library to handle EmbAPI messages on Arduino/Linux
  - [X] Implement EmbapiMessageJson
  - [X] Compile source code in arduino (ESP8266/ESP32)
  - [X] Compile source code on linux
+ - [ ] Compile source code on windows
  - [ ] Implement UNIT Tests
 
-EmbapiCore v0.1.0: Library to handle EmbAPI IoT protocols on Arduino/Linux
+EmbapiCore v0.1.0: Library to handle EmbAPI IoT protocols on Arduino/Linux/Windows
 
  - [ ] Implement MqttClientWrapper
  - [ ] Implement NtpClientWrapper
  - [ ] Implement HttpServerWrapper
  - [ ] Implement EmbapiApi
+ - [ ] Compile source code in arduino (ESP8266/ESP32)
+ - [ ] Compile source code on linux
+ - [ ] Compile source code on windows
+ - [ ] Implement UNIT Tests
  - [ ] Implement UNIT Tests
 
 EmbapiJS v0.1.0: Library to integrate EmbAPI devices to javascript applications
@@ -58,7 +63,7 @@ embapi_idf v0.1.0: Implement embapi on espressif-idf
  - [ ] Implement embapi_core
  - [ ] Implement embapi
 
-EmbapiTA v0.1.0: TA initial stack for EmbAPI for Arduino/Linux
+EmbapiTA v0.1.0: TA initial stack for EmbAPI for Arduino/Linux/Windows
 
 - [ ] Implement ModbusWrapper for arduino/linux
 - [ ] Implement UNIT Tests
