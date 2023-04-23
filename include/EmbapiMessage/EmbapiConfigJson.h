@@ -12,17 +12,17 @@
 #ifndef __EMBAPICONFIGJSON__H__
 #define __EMBAPICONFIGJSON__H__
 
-#include "EmbapiError.h"
 #include "EmbapiConfig.h"
+#include "EmbapiJson.h"
 
-class EmbapiConfigJson : public EmbapiConfig
+class EmbapiConfigJson : public EmbapiConfig, public EmbapiJson
 {
 private:
 
 public:
-    EmbapiConfigJson(){}
-    char *toJson();
-    EmbapiError fromJson(char *json);
+    EmbapiConfigJson() {}
+    void toJson(JsonDocument *doc) override;
+    void fromJson(JsonDocument *doc) override;
 };
 
 #endif  //!__EMBAPICONFIGJSON__H__
