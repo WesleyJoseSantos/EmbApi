@@ -12,7 +12,31 @@
 #ifndef __EMBAPIMESSAGE__H__
 #define __EMBAPIMESSAGE__H__
 
-#include <inttypes.h>
+#include "EmbapiCore/EmbapiError.h"
+#include "EmbapiMessage/EmbapiConfig.h"
+
+/**
+ * @brief Union for storing Embapi messages
+ * 
+ * This union is used to store different types of messages in the EmbapiMessage class.
+ * 
+ */
+union EmbapiMessageData
+{
+    EmbapiConfig config;
+
+    /**
+     * @brief Constructor for EmbapiMessageData class
+     * 
+     */
+    EmbapiMessageData(){}
+
+    /**
+     * @brief Destructor for EmbapiMessageData class
+     * 
+     */
+    ~EmbapiMessageData(){}
+};
 
 /**
  * @enum EmbapiMessageType
@@ -35,8 +59,9 @@ class EmbapiMessage
 private:
 
 protected:
-    uint8_t type; /**< Message type */
-    uint8_t error; /**< Message error code*/
+    EmbapiMessageType type; /**< Message type */
+    EmbapiError error; /**< Message error code*/
+    EmbapiMessageData data; /**< Message data*/
 public:
 
     /**
