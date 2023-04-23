@@ -18,7 +18,8 @@
 class NtpConfigJson : public NtpConfig, public EmbapiJson
 {
 public:
-    NtpConfigJson(){}
+    NtpConfigJson(const NtpConfig& config) : NtpConfig(config) {}
+    NtpConfigJson(JsonDocument *doc){ fromJson(doc); }
     void toJson(JsonDocument *doc) override;
     void fromJson(JsonDocument *doc) override;
 };
