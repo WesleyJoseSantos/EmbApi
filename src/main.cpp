@@ -14,16 +14,16 @@
 #else
 #include <stdio.h>
 #endif
-#include "EmbapiMessage/MqttConfigJson.h"
+#include "EmbapiMessage/EmbapiMessageJson.h"
 
-MqttConfigJson mqtt = MqttConfigJson();
+EmbapiMessageJson msg;
 
 void setup() {
   // put your setup code here, to run once:
   printf("Setup\n");
-  const char* jsonStr = "{\"url\":\"mqtt://broker.com.br\",\"port\":1883,\"user\":\"mqtt username\",\"password\":\"mqtt password\"}";
-  mqtt.fromString(jsonStr);
-  printf("%s\n", mqtt.toString());
+  const char* jsonStr = "{\"type\":1,\"id\":11,\"url\":\"mqtt://broker.com.br\",\"port\":1883,\"user\":\"mqtt username\",\"password\":\"mqtt password\"}";
+  msg.fromString(jsonStr);
+  printf("%s\n", msg.toString());
 }
 
 void loop() {
@@ -34,9 +34,9 @@ void loop() {
 #ifndef Arduino_h
 int main() {
   setup();
-  // while (true) {
-  //   loop();
-  // }
+  while (true) {
+    loop();
+  }
   return 0;
 }
 #endif
