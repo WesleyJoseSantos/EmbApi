@@ -25,7 +25,7 @@ private:
 public:
     MqttConfig(){}
 
-    MqttConfig(char url[64], uint32_t port, char user[48], char password[48])
+    MqttConfig(const char url[64], uint32_t port, const char user[48], const char password[48])
     {
         strncpy(this->url, url, sizeof(this->url));
         this->port = port;
