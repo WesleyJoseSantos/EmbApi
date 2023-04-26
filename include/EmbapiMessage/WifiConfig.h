@@ -22,7 +22,7 @@ private:
 public:
     WifiConfig(){}
 
-    WifiConfig(char ssid[32], char password[32])
+    WifiConfig(const char ssid[32], const char password[32])
     {
         strncpy(this->ssid, ssid, sizeof(this->ssid));
         strncpy(this->password, password, sizeof(this->ssid));

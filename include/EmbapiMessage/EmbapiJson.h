@@ -12,6 +12,7 @@
 #ifndef __EMBAPIJSON__H__
 #define __EMBAPIJSON__H__
 
+#include "EmbapiCore/EmbapiError.h"
 #include <ArduinoJson.h>
 
 class EmbapiJson
@@ -20,8 +21,8 @@ private:
     
 public:
     EmbapiJson() {}
-    virtual void toJson(JsonDocument *doc) = 0;
-    virtual void fromJson(JsonDocument *doc) = 0;
+    virtual EmbapiError toJson(JsonDocument *doc) = 0;
+    virtual EmbapiError fromJson(JsonDocument *doc) = 0;
     char *toString();
     void fromString(const char *str);
 };

@@ -12,6 +12,7 @@
 #ifndef __EMBAPICONFIGJSON__H__
 #define __EMBAPICONFIGJSON__H__
 
+#include "EmbapiCore/EmbapiError.h"
 #include "EmbapiConfig.h"
 #include "EmbapiJson.h"
 
@@ -22,8 +23,8 @@ private:
 public:
     EmbapiConfigJson(const EmbapiConfig &config):EmbapiConfig(config){}
     EmbapiConfigJson(JsonDocument *doc) { this->fromJson(doc); }
-    void toJson(JsonDocument *doc) override;
-    void fromJson(JsonDocument *doc) override;
+    EmbapiError toJson(JsonDocument *doc) override;
+    EmbapiError fromJson(JsonDocument *doc) override;
 };
 
 #endif  //!__EMBAPICONFIGJSON__H__

@@ -20,8 +20,8 @@ class MqttConfigJson : public MqttConfig, public EmbapiJson
 public:
     MqttConfigJson(const MqttConfig& config) : MqttConfig(config) {}
     MqttConfigJson(JsonDocument *doc){ fromJson(doc); }
-    void toJson(JsonDocument *doc) override;
-    void fromJson(JsonDocument *doc) override;
+    EmbapiError toJson(JsonDocument *doc) override;
+    EmbapiError fromJson(JsonDocument *doc) override;
 };
 
 #endif  //!__MQTTCONFIGJSON__H__

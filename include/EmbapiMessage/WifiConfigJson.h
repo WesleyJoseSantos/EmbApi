@@ -20,8 +20,8 @@ class WifiConfigJson : public WifiConfig, public EmbapiJson
 public:
     WifiConfigJson(const WifiConfig& config) : WifiConfig(config) {}
     WifiConfigJson(JsonDocument *doc){ fromJson(doc); }
-    void toJson(JsonDocument *doc) override;
-    void fromJson(JsonDocument *doc) override;
+    EmbapiError toJson(JsonDocument *doc) override;
+    EmbapiError fromJson(JsonDocument *doc) override;
 };
 
 #endif  //!__WIFICONFIGJSON__H__

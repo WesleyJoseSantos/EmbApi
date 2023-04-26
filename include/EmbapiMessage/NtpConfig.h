@@ -23,7 +23,7 @@ private:
 public:
     NtpConfig(){}
 
-    NtpConfig(char server[64], uint32_t interval)
+    NtpConfig(const char server[64], uint32_t interval)
     {
         strncpy(this->server, server, sizeof(this->server));
         this->interval = interval;

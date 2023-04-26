@@ -18,6 +18,6 @@ private:
     
 public:
     EmbapiMessageJson() {}
-    void toJson(JsonDocument *doc) override;
-    void fromJson(JsonDocument *doc) override;
+    EmbapiError toJson(JsonDocument *doc) override;
+    EmbapiError fromJson(JsonDocument *doc) override;
 };

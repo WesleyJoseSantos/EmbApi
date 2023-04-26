@@ -9,8 +9,8 @@
  * 
  */
 
-#ifndef __MQTTCLIENTCONFIG__H__
-#define __MQTTCLIENTCONFIG__H__
+#ifndef __MQTTCONFIG__H__
+#define __MQTTCONFIG__H__
 
 #include <inttypes.h>
 #include <string.h>
@@ -44,4 +44,4 @@ public:
     void setUser(const char user[48]){ strncpy(this->user, user, sizeof(this->user)); }
 };
 
-#endif  //!__MQTTCLIENTCONFIG__H__
+#endif  //!__MQTTCONFIG__H__
