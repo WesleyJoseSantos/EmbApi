@@ -31,12 +31,12 @@ void loop() {
   printf("Loop\n");
 }
 
-#ifndef Arduino_h
+#if !defined(Arduino_h) && !defined(UNIT_TEST)
 int main() {
   setup();
-  while (true) {
-    loop();
-  }
+  // while (true) {
+  //   loop();
+  // }
   return 0;
 }
 #endif
