@@ -11,14 +11,16 @@
 
 #include "EmbapiMessage/NtpConfigJson.h"
 
-void NtpConfigJson::toJson(JsonDocument *doc)
+EmbapiError NtpConfigJson::toJson(JsonDocument *doc)
 {
     (*doc)["interval"] = this->getInterval();
     (*doc)["server"] = this->getServer();
+    return EmbapiError::NO_ERROR;
 }
 
-void NtpConfigJson::fromJson(JsonDocument *doc)
+EmbapiError NtpConfigJson::fromJson(JsonDocument *doc)
 {
     this->setInterval((*doc)["interval"]);
     this->setServer((*doc)["server"]);
+    return EmbapiError::NO_ERROR;
 }

@@ -11,18 +11,20 @@
 
 #include "EmbapiMessage/MqttConfigJson.h"
 
-void MqttConfigJson::toJson(JsonDocument *doc)
+EmbapiError MqttConfigJson::toJson(JsonDocument *doc)
 {
     (*doc)["url"] = this->getUrl();
     (*doc)["port"] = this->getPort();
     (*doc)["user"] = this->getUser();
     (*doc)["password"] = this->getPassword();
+    return EmbapiError::NO_ERROR;
 }
 
-void MqttConfigJson::fromJson(JsonDocument *doc)
+EmbapiError MqttConfigJson::fromJson(JsonDocument *doc)
 {
     this->setUrl((*doc)["url"]);
     this->setPort((*doc)["port"]);
     this->setUser((*doc)["user"]);
     this->setPassword((*doc)["password"]);
+    return EmbapiError::NO_ERROR;
 }

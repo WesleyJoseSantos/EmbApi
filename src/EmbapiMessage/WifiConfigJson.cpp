@@ -11,14 +11,16 @@
 
 #include "EmbapiMessage/WifiConfigJson.h"
 
-void WifiConfigJson::toJson(JsonDocument *doc)
+EmbapiError WifiConfigJson::toJson(JsonDocument *doc)
 {
     (*doc)["ssid"] = this->getSSID();
     (*doc)["password"] = this->getPassword();
+    return EmbapiError::NO_ERROR;
 }
 
-void WifiConfigJson::fromJson(JsonDocument *doc)
+EmbapiError WifiConfigJson::fromJson(JsonDocument *doc)
 {
     this->setSSID((*doc)["ssid"]);
     this->setPassword((*doc)["password"]);
+    return EmbapiError::NO_ERROR;
 }

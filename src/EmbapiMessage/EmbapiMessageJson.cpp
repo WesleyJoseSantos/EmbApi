@@ -12,21 +12,22 @@
 #include "EmbapiMessage/EmbapiMessageJson.h"
 #include "EmbapiMessage/EmbapiConfigJson.h"
 
-void EmbapiMessageJson::toJson(JsonDocument *doc) {
+EmbapiError EmbapiMessageJson::toJson(JsonDocument *doc) {
     (*doc)["type"] = this->type;
+    (*doc)["error"] = this->error;
 
     switch (type)
     {
         case EMBAPI_MESSAGE_TYPE_UNKNOWN:
-            this->error = (*doc)["error"];
-            break;
+            return EmbapiError::UNKNOWN_TYPE;
         case EMBAPI_MESSAGE_TYPE_CONFIG:
-            EmbapiConfigJson(this->data.config).toJson(doc);
-            break;
+            return EmbapiConfigJson(this->data.config).toJson(doc);
     }
+
+    return EmbapiError::NO_ERROR;
 }
 
-void EmbapiMessageJson::fromJson(JsonDocument *doc) {
+EmbapiError EmbapiMessageJson::fromJson(JsonDocument *doc) {
     this->type = (*doc)["type"];
     this->error = (*doc)["error"];
 
@@ -34,9 +35,11 @@ void EmbapiMessageJson::fromJson(JsonDocument *doc) {
     {
         case EMBAPI_MESSAGE_TYPE_UNKNOWN:
             this->error = EmbapiError::UNKNOWN_TYPE;
-            break;
+            return EmbapiError::UNKNOWN_TYPE;
         case EMBAPI_MESSAGE_TYPE_CONFIG:
             this->data.config = EmbapiConfigJson(doc);
             break;
     }
+    
+    return EmbapiError::NO_ERROR;
 }
