@@ -116,6 +116,7 @@ void fromJsonMqtt()
     StaticJsonDocument<256> doc;
     deserializeJson(doc, jsonStr);
     EmbapiConfigJson embapi(&doc);
+    TEST_ASSERT_EQUAL(EMBAPI_CONFIG_ID_MQTT, doc["id"]);
     TEST_ASSERT_EQUAL_STRING(embapi.getData().mqtt.getUrl(), doc["url"]);
     TEST_ASSERT_EQUAL(embapi.getData().mqtt.getPort(), doc["port"]);
     TEST_ASSERT_EQUAL_STRING(embapi.getData().mqtt.getUser(), doc["user"]);
