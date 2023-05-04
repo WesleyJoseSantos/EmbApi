@@ -17,7 +17,9 @@ class EmbapiMessageJson : public EmbapiMessage, public EmbapiJson
 private:
     
 public:
-    EmbapiMessageJson() {}
+    EmbapiMessageJson(){}
+    EmbapiMessageJson(const EmbapiMessage &message):EmbapiMessage(message){}
+    EmbapiMessageJson(JsonDocument *doc) { this->fromJson(doc); }
     EmbapiError toJson(JsonDocument *doc) override;
     EmbapiError fromJson(JsonDocument *doc) override;
 };
