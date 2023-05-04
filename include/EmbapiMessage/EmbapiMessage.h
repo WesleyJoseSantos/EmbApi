@@ -30,6 +30,7 @@ union EmbapiMessageData
      * 
      */
     EmbapiMessageData(){}
+    EmbapiMessageData(EmbapiConfig config){ this->config = config; }
 
     /**
      * @brief Destructor for EmbapiMessageData class
@@ -65,6 +66,24 @@ protected:
 public:
 
     /**
+     * @brief Default constructor for EmbapiConfig class
+     * 
+     */
+    EmbapiMessage(){}
+
+    /**
+     * @brief Constructor for EmbapiMessage class
+     * 
+     * @param type Message type
+     * @param data Message data
+     */
+    EmbapiMessage(EmbapiMessageType type, EmbapiMessageData data)
+    {
+        this->type = type;
+        this->data = data;
+    }
+
+    /**
      * @brief Get the message type
      * 
      * @return uint8_t Message type
@@ -77,6 +96,13 @@ public:
      * @return uint8_t Error code
      */
     uint8_t getError() { return error; }
+
+    /**
+     * @brief Get the message data
+     * 
+     * @return EmbapiMessageData Message data
+     */
+    EmbapiMessageData getData() { return data; }
 };
 
 #endif  //!__EMBAPIMESSAGE__H__
