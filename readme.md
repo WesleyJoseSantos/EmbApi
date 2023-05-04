@@ -29,7 +29,7 @@ EmbapiMessage v0.1.0: Library to handle EmbAPI messages on Arduino/Linux/Windows
  - [X] Compile source code in arduino (ESP8266/ESP32)
  - [X] Compile source code on linux
  - [X] Compile source code on windows
- - [ ] Implement UNIT Tests
+ - [X] Implement UNIT Tests
 
 EmbapiCore v0.1.0: Library to handle EmbAPI IoT protocols on Arduino/Linux/Windows
 
